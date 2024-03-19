@@ -1,0 +1,35 @@
+/* Abstraction in Java is a concept of hiding the implementation details and showing only the essential features of an object. It allows you to focus on what an object does rather than how it achieves it. In Java, abstraction is achieved through abstract classes and interfaces. */
+
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+interface Animal {
+    void makeSound();
+}
+
+class Dog implements Animal {
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Shape circle = new Circle(5);
+        System.out.println("Area of circle: " + circle.calculateArea());
+        Animal dog = new Dog();
+        dog.makeSound();
+    }
+}
